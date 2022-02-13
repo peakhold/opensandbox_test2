@@ -1,4 +1,3 @@
-import "./styles.css";
 /**
  * const let等の変数宣言
  */
@@ -129,15 +128,92 @@ import "./styles.css";
 
 // const arr6 = [...arr4];
 // console.log(arr6);
-
 // const arr7 = [...arr4, ...arr5];
 // console.log(arr7);
-////const arr8 = arr4;
-//console.log(arr8);
-//arr4[0] = 100;
-//console.log(arr8);
-//console.log(arr4);
 
-let atai = [10, 20];
-console.log(atai);
-atai[0] = 100;
+/**
+ * mapやフィルタを使った配列の処理
+ */
+//const nameArr = ["田中", "山田", "じゃけぇ"];
+
+//forを使う
+// for (let index = 0; index < nameArr.length; index++ ) {
+//   console.log(`${index +1}番目は${nameArr[index]}です`);
+// }
+
+//mapを使う
+//nameArr.map((name, index)=> console.log(`${index +1}番目は${name}です`));
+
+//nameArr.map((name) => console.log(name));
+
+// const numArr = [1, 2, 3, 4, 5];
+// const newNumArr = numArr.filter((num) => {
+//   return num % 2 === 1; //条件文を書く。2で割ったものが1になるものだけ
+// });
+// console.log(newNumArr);
+
+// filterのコールバック関数を別に定義
+// function isBigEnough(value) {
+//   return value >= 10
+// }
+//let filtered = [12, 5, 8, 130, 44].filter((isBigEnough))
+//console.log(filtered);
+
+// 上の変更版でコールバックをアロー関数で提供
+// let original = [12, 5, 8, 130, 44];
+// const filtered = original.filter((value) =>{
+//   return value >= 10;
+// });
+// console.log(filtered);
+
+//語尾にさんをつける mapの実践例
+// const newNameArr = nameArr.map((name) => {
+//   if (name === "じゃけぇ"){
+//     return name
+//   } else {
+//     return `${name}さん`
+//   }
+// } )
+// console.log(newNameArr);
+
+/**
+ * 三項演算子
+ */
+// ある条件を書いて　? を書いて　条件がtrueの時は : の前、falseなら : の後が返る
+// const val1 = 1 > 0 ? `trueです` : `falseです`;
+// console.log(val1);
+
+//数値が来た時と文字列が来たときで処理を分ける例
+// const num = "1300";
+
+// const formattedNum = typeof num === `number` ? num.toLocaleString() : `数値を入力してください`
+// console.log(formattedNum);
+
+// const checkSum = (num1, num2) => {
+//   return num1 + num2 > 100 ? `100を超えています` : `許容範囲内です`;
+// }
+// console.log(checkSum(50,60));
+
+/**
+ * 論理演算子の本当の意味を知ろう　&& ||
+ */
+// const flag1 = true;
+// const flag2 = true;
+
+// if (flag1 || flag2){
+//   console.log("1か2はtrueになります");
+// }
+
+// if (flag1 && flag2){
+//   console.log("1も2もtrueになります");
+// }
+
+// || は左側がfalseなら右側を返す、という意味
+const num = null;
+const fee = num || "金額未設定です";
+console.log(fee);
+
+// && は左側がtrueならば右側を返す、という意味
+const num2 = null;
+const fee2 = num2 && "何か設定されました";
+console.log(fee2);
